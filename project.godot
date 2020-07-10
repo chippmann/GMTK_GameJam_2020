@@ -8,15 +8,66 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Tween",
+"class": "CurveTween",
+"language": "GDScript",
+"path": "res://addons/utils/curveTween/CurveTween.gd"
+}, {
+"base": "Reference",
+"class": "ErrorConverter",
+"language": "GDScript",
+"path": "res://addons/utils/converter/ErrorConverter.gd"
+}, {
+"base": "Reference",
+"class": "Logger",
+"language": "GDScript",
+"path": "res://addons/utils/logger/Logger.gd"
+}, {
+"base": "Reference",
+"class": "Serializer",
+"language": "GDScript",
+"path": "res://addons/utils/serialisation/Serializer.gd"
+}, {
+"base": "Node2D",
+"class": "State2D",
+"language": "GDScript",
+"path": "res://addons/utils/statemachine/State2D.gd"
+}, {
+"base": "Spatial",
+"class": "State3D",
+"language": "GDScript",
+"path": "res://addons/utils/statemachine/State3D.gd"
+}, {
+"base": "Node2D",
+"class": "StateMachine2D",
+"language": "GDScript",
+"path": "res://addons/utils/statemachine/Statemachine2D.gd"
+}, {
+"base": "Node2D",
+"class": "StateMachine3D",
+"language": "GDScript",
+"path": "res://addons/utils/statemachine/Statemachine3D.gd"
+} ]
 _global_script_class_icons={
-
+"CurveTween": "",
+"ErrorConverter": "",
+"Logger": "",
+"Serializer": "",
+"State2D": "",
+"State3D": "",
+"StateMachine2D": "",
+"StateMachine3D": ""
 }
 
 [application]
 
 config/name="GMTK_GameJam_2020"
 config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "utils" )
 
 [rendering]
 
