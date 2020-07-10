@@ -83,7 +83,9 @@ func _check_if_children_configured(nodeToCheck: Node) -> String:
 			if get_path_to(nodeToCheck) == nodePath:
 				return ""
 	
-	if nodeToCheck == self || !nodeToCheck is State2D:
+	var stateClass := load("res://addons/utils/statemachine/State2D.gd")
+	var script = (nodeToCheck.get_script() as Script).get_base_script()
+	if nodeToCheck == self || !script == stateClass:
 		return ""
 	
 	return """Child State %s is not configured!

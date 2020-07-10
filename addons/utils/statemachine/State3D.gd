@@ -23,7 +23,8 @@ called when the state gets active
 use this to initialize state specific values and trigger start functions
 """
 func enter(_message: Dictionary = {}) -> void:
-	pass
+	if _parentState:
+		_parentState.enter(_message)
 
 
 """
@@ -31,7 +32,8 @@ virtual method to be overriden by inheritant class
 a state can handle user input inside this function
 """
 func unhandledInput(_event: InputEvent) -> void:
-	pass
+	if _parentState:
+		_parentState.unhandledInput(_event)
 
 
 """
@@ -41,7 +43,8 @@ it deferres the call to the current active state (or multiple state in case of H
 we dont want to use the engines _process because we want the state machine to handle which states process gets called
 """
 func process(_delta: float) -> void:
-	pass
+	if _parentState:
+		_parentState.process(_delta)
 
 
 """
@@ -51,7 +54,8 @@ it deferres the call to the current active state (or multiple state in case of H
 we dont want to use the engines _physics_process because we want the state machine to handle which states physics_process gets called
 """
 func physicsProcess(_delta: float) -> void:
-	pass
+	if _parentState:
+		_parentState.physicsProcess(_delta)
 
 
 """
@@ -60,7 +64,8 @@ called when the state is not active anymore
 use this to cleanup state specific values and trigger end functions
 """
 func exit() -> void:
-	pass
+	if _parentState:
+		_parentState.exit()
 
 
 

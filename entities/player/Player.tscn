@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://entities/player/statemachine/PlayerStateMachine.gd" type="Script" id=1]
+[ext_resource path="res://entities/player/statemachine/state/IdleState.gd" type="Script" id=2]
+[ext_resource path="res://entities/player/statemachine/state/MovementState.gd" type="Script" id=3]
+[ext_resource path="res://entities/player/statemachine/state/MoveState.gd" type="Script" id=4]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[node name="Player" type="KinematicBody"]
+
+[node name="BodyCollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="BodyMeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="PlayerStateMachine" type="Spatial" parent="."]
+script = ExtResource( 1 )
+initialStateNodePath = NodePath("../PlayerStateMachine/MovementState/IdleState")
+idleState = NodePath("../PlayerStateMachine/MovementState/IdleState")
+moveState = NodePath("../PlayerStateMachine/MovementState/MoveState")
+
+[node name="MovementState" type="Spatial" parent="PlayerStateMachine"]
+script = ExtResource( 3 )
+kinematicBodyNodePath = NodePath("../..")
+
+[node name="IdleState" type="Spatial" parent="PlayerStateMachine/MovementState"]
+script = ExtResource( 2 )
+
+[node name="MoveState" type="Spatial" parent="PlayerStateMachine/MovementState"]
+script = ExtResource( 4 )
