@@ -39,3 +39,15 @@ func _physics_process(delta: float) -> void:
 #		$MeshInstance2.transform.origin = Vector3(randomPositionX, global_transform.origin.y, randomPositionZ)
 		path = navigation.get_simple_path(global_transform.origin, Vector3(randomPositionX, global_transform.origin.y, randomPositionZ))
 		pathIndex = 0
+
+
+func _on_Area_body_entered(body: Node) -> void:
+	if !body.is_in_group("player"): return
+	var currentGameStage = GameManager.currentStage
+	match(currentGameStage):
+		GameManager.Stage.RHYTHMIC:
+			GameManager.rhythmicScore -= 10
+			if GameManager.rhythmicScore < 0:
+				GameManager.rhythmicScore = 0
+		GameManager.Stage.SHOOT:
+			GameManager.shootScore += 2
