@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://material/WallMaterial.tres" type="Material" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
@@ -26,6 +26,9 @@ albedo_color = Color( 0.658824, 0.658824, 0.658824, 1 )
 albedo_color = Color( 0.32549, 0.32549, 0.32549, 1 )
 
 [sub_resource type="BoxShape" id=7]
+
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 1, 0.0652513, 1.78596 )
 
 [sub_resource type="SpatialMaterial" id=8]
 albedo_color = Color( 0.32549, 0.32549, 0.32549, 1 )
@@ -98,6 +101,10 @@ material/0 = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/DjPult"]
 shape = SubResource( 7 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Navigation/NavigationMeshInstance/DjPult"]
+transform = Transform( 1, 0, 0, 0, 0.684852, -0.728682, 0, 0.728682, 0.684852, 0, 2.19403, -0.266085 )
+shape = SubResource( 21 )
 
 [node name="DjPult2" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
 transform = Transform( 2.85698, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.137668, -16.5182 )
@@ -288,6 +295,7 @@ transform = Transform( 1, 0, 0, 0, 0.482075, 0.87613, 0, -0.87613, 0.482075, 0, 
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48021, 0 )
+cameraNodePath = NodePath("../Camera")
 
 [node name="Lights" parent="." instance=ExtResource( 4 )]
 
@@ -332,3 +340,25 @@ navigationNodePath = NodePath("../../Navigation")
 
 [node name="FallingLight" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.9017, 0 )
+
+[node name="SpawnPoints" type="Spatial" parent="."]
+
+[node name="Spatial" type="Spatial" parent="SpawnPoints" groups=[
+"spawn",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.7457, 10.5609 )
+
+[node name="Spatial2" type="Spatial" parent="SpawnPoints" groups=[
+"spawn",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.7457, 3.17517 )
+
+[node name="Spatial3" type="Spatial" parent="SpawnPoints" groups=[
+"spawn",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5343, 25.7457, 8.19479 )
+
+[node name="Spatial4" type="Spatial" parent="SpawnPoints" groups=[
+"spawn",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5343, 25.7457, 11.6812 )

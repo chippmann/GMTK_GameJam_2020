@@ -14,12 +14,15 @@ var path := []
 var pathIndex = 0
 var isPanicing := false
 
+var health := 100
+
 func _ready() -> void:
 	randomize()
 #	$MeshInstance2.set_as_toplevel(true)
 
 var waiting := false
 func _physics_process(delta: float) -> void:
+	isPanicing = GameManager.currentStage >= GameManager.Stage.SURVIVAL
 	if waiting: return
 	if pathIndex < path.size():
 		var moveVector: Vector3 = (path[pathIndex] - global_transform.origin)
@@ -27,9 +30,15 @@ func _physics_process(delta: float) -> void:
 			pathIndex += 1
 		else:
 			if isPanicing:
-				move_and_slide(moveVector.normalized() * moveSpeed * moveSpeedPanicMultiplier, Vector3.UP)
+				var velocity = moveVector.normalized() * moveSpeed * moveSpeedPanicMultiplier
+				if !is_on_floor():
+					velocity.y -= 9.81 * moveSpeedMultiplier
+				move_and_slide(velocity, Vector3.UP)
 			else:
-				move_and_slide(moveVector.normalized() * moveSpeed * moveSpeedMultiplier, Vector3.UP)
+				var velocity = moveVector.normalized() * moveSpeed * moveSpeedMultiplier
+				if !is_on_floor():
+					velocity.y -= 9.81 * moveSpeedMultiplier
+				move_and_slide(velocity, Vector3.UP)
 	else:
 		if !isPanicing:
 			waiting = true
@@ -52,3 +61,20 @@ func _on_Area_body_entered(body: Node) -> void:
 				GameManager.rhythmicScore = 0
 		GameManager.Stage.SHOOT:
 			GameManager.shootScore += 2
+
+
+func damage(value: int) -> void:
+	health -= value
+	if health <= 0:
+		waiting = true
+		visible = false
+		var spawnPoints = get_tree().get_nodes_in_group("spawn")
+		var spawnPoint = spawnPoints[randi() % spawnPoints.size()]
+		transform.origin = spawnPoint.transform.origin
+		health = 100
+		path = []
+		pathIndex = 0
+		visible = true
+		while !is_on_floor():
+			yield(get_tree().create_timer(0.2), "timeout")
+		waiting = false
