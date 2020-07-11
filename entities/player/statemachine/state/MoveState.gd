@@ -8,8 +8,8 @@ func physicsProcess(delta: float) -> void:
 		_getStatemachine().transitionTo(_getStatemachine().idleState)
 		return
 	
-	parentState._inputVelocity.z = (Input.get_action_strength("movement_forward") - Input.get_action_strength("movement_backward")) * parentState.movementSpeed * parentState._movementMultiplicator
-	parentState._inputVelocity.x = (Input.get_action_strength("movement_left") - Input.get_action_strength("movement_right")) * parentState.movementSpeed * parentState._movementMultiplicator
+	parentState._inputVelocity.z = (Input.get_action_strength("movement_backward") - Input.get_action_strength("movement_forward")) * parentState.movementSpeed * parentState._movementMultiplicator
+	parentState._inputVelocity.x = (Input.get_action_strength("movement_right") - Input.get_action_strength("movement_left")) * parentState.movementSpeed * parentState._movementMultiplicator
 	
 	if InputUtils.isMovingDiagonally(parentState._velocity):
 		parentState._inputVelocity.z /= sqrt(PI)
