@@ -1,6 +1,7 @@
 extends State3D
 class_name MovementState
 
+const _gravity: float = 9.81
 const _movementMultiplicator: int = 100
 
 export(int) var movementSpeed := 10
@@ -47,6 +48,11 @@ func physicsProcess(delta: float) -> void:
 		_inputX = Vector2.ZERO
 		_getStatemachine().transitionTo(_getStatemachine().idleState)
 		return
+	
+	if _kinematicBody.is_on_floor():
+		_inputVelocity.y = 0
+	else:
+		_inputVelocity.y -= _gravity * _movementMultiplicator
 	
 	_velocity = _kinematicBody.move_and_slide(_inputVelocity * delta, Vector3.UP)
 	_inputVelocity = Vector3.ZERO

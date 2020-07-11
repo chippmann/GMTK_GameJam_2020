@@ -1,6 +1,7 @@
 extends State3D
 class_name MoveState
 
+const _sprintMultiplier := 2
 
 func physicsProcess(delta: float) -> void:
 	var parentState := _getTypedParentState()
@@ -12,8 +13,11 @@ func physicsProcess(delta: float) -> void:
 	parentState._inputVelocity.x = (Input.get_action_strength("movement_right") - Input.get_action_strength("movement_left")) * parentState.movementSpeed * parentState._movementMultiplicator
 	
 	if InputUtils.isMovingDiagonally(parentState._velocity):
-		parentState._inputVelocity.z /= sqrt(PI)
-		parentState._inputVelocity.x /= sqrt(PI)
+		parentState._inputVelocity /= sqrt(PI)
+	
+	if Input.is_action_pressed("movement_sprint"):
+		parentState._inputVelocity *= _sprintMultiplier
+	
 	parentState.physicsProcess(delta)
 
 
