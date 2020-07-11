@@ -14,7 +14,8 @@ var path := []
 var pathIndex = 0
 var isPanicing := false
 
-#func _ready() -> void:
+func _ready() -> void:
+	randomize()
 #	$MeshInstance2.set_as_toplevel(true)
 
 var waiting := false

@@ -1,6 +1,8 @@
 extends Spatial
 class_name Lights
 
+export(PackedScene) var fallingLightPackedScene: PackedScene
+
 onready var light0: SpotLight = $SpotLight
 onready var light1: SpotLight = $SpotLight2
 onready var light2: SpotLight = $SpotLight3
@@ -16,7 +18,33 @@ var light3Color = _getLightColor()
 
 var rotationTarget = 0.0
 
+var floorMeshInstanceSize: Vector2 = Vector2(40, 40)
+
+func _ready() -> void:
+	randomize()
+
 func _process(delta: float) -> void:
+	_setLighing()
+	if GameManager.currentStage >= GameManager.Stage.SURVIVAL:
+		_fallingLights(delta)
+
+
+var fallingLightsTimeInterval := 1.0
+var fallingLightTime := 0.0
+func _fallingLights(delta: float) -> void:
+	fallingLightTime += delta
+	if fallingLightTime > fallingLightsTimeInterval:
+		if fallingLightsTimeInterval > 0.05:
+			fallingLightsTimeInterval -= 0.01
+		fallingLightTime -= fallingLightsTimeInterval
+		var randomPositionX := randi() % int(floorMeshInstanceSize.x) - 20
+		var randomPositionZ := randi() % int(floorMeshInstanceSize.y) - 20
+		var spawnPosition := Vector3(randomPositionX, global_transform.origin.y + 20, randomPositionZ)
+		var fallingLight: FallingLight = fallingLightPackedScene.instance()
+		fallingLight.transform.origin = spawnPosition
+		get_parent().add_child(fallingLight)
+
+func _setLighing() -> void:
 	if nextRotationChange < OS.get_ticks_msec():
 		nextRotationChange = OS.get_ticks_msec() + 200
 		rotationTarget = SoundPlayer.wholeSpectrumEnergy * TAU
@@ -39,7 +67,6 @@ func _process(delta: float) -> void:
 		light1Color = _getLightColor()
 		light2Color = _getLightColor()
 		light3Color = _getLightColor()
-
 
 func _getLightEnergy(light: int) -> float:
 	var lightEnergy: float = 0
