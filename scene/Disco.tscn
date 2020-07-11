@@ -1,12 +1,17 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://material/WallMaterial.tres" type="Material" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/Lights.gd" type="Script" id=4]
 [ext_resource path="res://scene/SoundPlates.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/enemy/Enemy.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
+
+[sub_resource type="NavigationMesh" id=8]
+vertices = PoolVector3Array( -9.8, 0.5, -19.4, -19.4, 0.5, -19.4, -19.4, 0.5, -9.8, -19.4, 0.5, 9.4, -19.4, 0.5, 19.3, -9.8, 0.5, 19.3, 19.3, 0.5, -9.8, 19.3, 0.5, -19.4, 9.4, 0.5, -19.4, 9.4, 0.5, 19.3, 19.3, 0.5, 19.3, 19.3, 0.5, 9.4, -0.199999, 0.5, -19.4, -9.8, 0.5, -19.4, -19.4, 0.5, -9.8, -19.4, 0.5, -0.199999, -19.4, 0.5, 9.4, -9.8, 0.5, 19.3, -0.199999, 0.5, 19.3, 19.3, 0.5, -0.199999, 19.3, 0.5, -9.8, 9.4, 0.5, -19.4, -0.199999, 0.5, -19.4, -0.199999, 0.5, 19.3, 9.4, 0.5, 19.3, 19.3, 0.5, 9.4, -19.4, 0.5, -0.199999, -19.4, 0.5, 9.4, -0.199999, 0.5, 19.3, 19.3, 0.5, 9.4, 19.3, 0.5, -0.199999, -0.199999, 0.5, -19.4 )
+polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 8, 7, 6 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 13, 12, 14 ), PoolIntArray( 14, 12, 15 ), PoolIntArray( 18, 17, 16 ), PoolIntArray( 20, 19, 21 ), PoolIntArray( 21, 19, 22 ), PoolIntArray( 25, 24, 23 ), PoolIntArray( 27, 26, 28 ), PoolIntArray( 28, 26, 29 ), PoolIntArray( 29, 26, 30 ), PoolIntArray( 30, 26, 31 ) ]
 
 [sub_resource type="CubeMesh" id=2]
 
@@ -37,7 +42,12 @@ glow_bicubic_upscale = true
 transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Floor"]
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 8 )
+
+[node name="FloorMeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
 transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
@@ -200,3 +210,32 @@ environment = SubResource( 7 )
 
 [node name="SoundPlates" parent="." instance=ExtResource( 5 )]
 visible = false
+
+[node name="Enemies" type="Spatial" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 6 )]
+navigationNodePath = NodePath("../../Navigation")
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5103, 1.20112, 0 )
+navigationNodePath = NodePath("../../Navigation")
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3264, 1.20112, -8.51451 )
+navigationNodePath = NodePath("../../Navigation")
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4613, 1.20112, 12.4118 )
+navigationNodePath = NodePath("../../Navigation")
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97571, 1.20112, 12.4118 )
+navigationNodePath = NodePath("../../Navigation")
+
+[node name="Enemy6" parent="Enemies" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9659, 1.20112, -12.8512 )
+navigationNodePath = NodePath("../../Navigation")
+
+[node name="Enemy7" parent="Enemies" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9659, 1.20112, 16.7328 )
+navigationNodePath = NodePath("../../Navigation")
