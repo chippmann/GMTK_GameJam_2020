@@ -32,13 +32,28 @@ margin_bottom = 165.0
 size_flags_vertical = 0
 
 [node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
-margin_right = 748.0
+margin_right = 338.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_left = 342.0
+margin_right = 405.0
+margin_bottom = 25.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Score: 0"
+
+[node name="Spacer2" type="Control" parent="MarginContainer/HBoxContainer"]
+margin_left = 409.0
+margin_right = 747.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="TutorialUiContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 752.0
-margin_right = 1004.0
+margin_left = 751.0
+margin_right = 1003.0
 margin_bottom = 155.0
 mouse_filter = 1
 size_flags_horizontal = 8

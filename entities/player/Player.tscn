@@ -17,7 +17,9 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" groups=[
+"player",
+]]
 
 [node name="BodyCollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0 )
