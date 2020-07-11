@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://material/WallMaterial.tres" type="Material" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
@@ -10,13 +10,49 @@
 [sub_resource type="BoxShape" id=1]
 
 [sub_resource type="NavigationMesh" id=8]
-vertices = PoolVector3Array( -9.8, 0.5, -19.4, -19.4, 0.5, -19.4, -19.4, 0.5, -9.8, -19.4, 0.5, 9.4, -19.4, 0.5, 19.3, -9.8, 0.5, 19.3, 19.3, 0.5, -9.8, 19.3, 0.5, -19.4, 9.4, 0.5, -19.4, 9.4, 0.5, 19.3, 19.3, 0.5, 19.3, 19.3, 0.5, 9.4, -0.199999, 0.5, -19.4, -9.8, 0.5, -19.4, -19.4, 0.5, -9.8, -19.4, 0.5, -0.199999, -19.4, 0.5, 9.4, -9.8, 0.5, 19.3, -0.199999, 0.5, 19.3, 19.3, 0.5, -0.199999, 19.3, 0.5, -9.8, 9.4, 0.5, -19.4, -0.199999, 0.5, -19.4, -0.199999, 0.5, 19.3, 9.4, 0.5, 19.3, 19.3, 0.5, 9.4, -19.4, 0.5, -0.199999, -19.4, 0.5, 9.4, -0.199999, 0.5, 19.3, 19.3, 0.5, 9.4, 19.3, 0.5, -0.199999, -0.199999, 0.5, -19.4 )
-polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 3, 5, 4 ), PoolIntArray( 8, 7, 6 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 13, 12, 14 ), PoolIntArray( 14, 12, 15 ), PoolIntArray( 18, 17, 16 ), PoolIntArray( 20, 19, 21 ), PoolIntArray( 21, 19, 22 ), PoolIntArray( 25, 24, 23 ), PoolIntArray( 27, 26, 28 ), PoolIntArray( 28, 26, 29 ), PoolIntArray( 29, 26, 30 ), PoolIntArray( 30, 26, 31 ) ]
+vertices = PoolVector3Array( -3.5, 0.462332, -17.9, -1.4, 0.462332, -18.2, -1.7, 0.462332, -19.4, -10.7, 0.462332, -19.4, -19.4, 0.462332, -13.7, -17, 0.462332, -13.7, -16.7, 0.462332, -14.6, -19.4, 0.462332, -19.4, -10.7, 0.462332, -19.4, -12.8, 0.462332, -13.7, -12.8, 0.462332, -12.5, -3.5, 0.462332, -13.1, -3.5, 0.462332, -17.9, -19.4, 0.462332, -19.4, -16.7, 0.462332, -14.6, -14, 0.462332, -15.5, -10.7, 0.462332, -19.4, -12.8, 0.462332, -12.5, -2.9, 0.462332, -12.8, -3.5, 0.462332, -13.1, -10.7, 0.462332, -19.4, -14, 0.462332, -15.5, -12.8, 0.462332, -13.7, 16.3, 0.462332, -14.9, 16.9, 0.462332, -13.7, 19.3, 0.462332, -13.7, 15.1, 0.462332, -15.5, 16.3, 0.462332, -14.9, 19.3, 0.462332, -13.7, 19.3, 0.462332, -19.4, -1.7, 0.462332, -19.4, -1.4, 0.462332, -18.2, 3.4, 0.462332, -18.2, 8.8, 0.462332, -19.4, 8.8, 0.462332, -19.4, 3.4, 0.462332, -18.2, 3.7, 0.462332, -14.9, 13, 0.462332, -14, 13.9, 0.462332, -15.5, 13.9, 0.462332, -15.5, 15.1, 0.462332, -15.5, 19.3, 0.462332, -19.4, 8.8, 0.462332, -19.4, -2.3, 2.66233, -15.2, -2.3, 2.66233, -14, 2.5, 2.66233, -14, 2.5, 2.66233, -15.2, 19.3, 0.462332, -13.7, 16.9, 0.462332, -13.7, 16, 0.462332, -11.3, 19.3, 0.462332, -5.6, -15.8, 0.462332, -11.3, -17, 0.462332, -13.7, -19.4, 0.462332, -13.7, -19.4, 0.462332, -5.6, -0.199999, 0.462332, 19.3, 9.4, 0.462332, 19.3, 19.3, 0.462332, 2.8, 12.7, 0.462332, -12.5, -2.9, 0.462332, -12.8, -19.4, 0.462332, 2.8, 9.4, 0.462332, 19.3, 19.3, 0.462332, 10.9, 19.3, 0.462332, 2.8, 19.3, 0.462332, -5.6, 16, 0.462332, -11.3, 14.2, 0.462332, -11.3, -14, 0.462332, -11.3, -15.8, 0.462332, -11.3, -19.4, 0.462332, -5.6, 12.7, 0.462332, -12.5, 13, 0.462332, -14, 3.7, 0.462332, -14.9, 3.4, 0.462332, -12.8, -19.4, 0.462332, 2.8, -19.4, 0.462332, 10.9, -9.8, 0.462332, 19.3, -0.199999, 0.462332, 19.3, -12.8, 0.462332, -12.5, -14, 0.462332, -11.3, -19.4, 0.462332, -5.6, -19.4, 0.462332, 2.8, -2.9, 0.462332, -12.8, 19.3, 0.462332, -5.6, 14.2, 0.462332, -11.3, 12.7, 0.462332, -12.5, 19.3, 0.462332, 2.8, -19.4, 0.462332, 10.9, -19.4, 0.462332, 19.3, -9.8, 0.462332, 19.3, 9.4, 0.462332, 19.3, 19.3, 0.462332, 19.3, 19.3, 0.462332, 10.9, 12.7, 0.462332, -12.5, 3.4, 0.462332, -12.8, -2.9, 0.462332, -12.8 )
+polygons = [ PoolIntArray( 1, 0, 2 ), PoolIntArray( 2, 0, 3 ), PoolIntArray( 5, 4, 6 ), PoolIntArray( 6, 4, 7 ), PoolIntArray( 9, 8, 10 ), PoolIntArray( 10, 8, 12 ), PoolIntArray( 10, 12, 11 ), PoolIntArray( 14, 13, 15 ), PoolIntArray( 15, 13, 16 ), PoolIntArray( 17, 19, 18 ), PoolIntArray( 22, 21, 20 ), PoolIntArray( 23, 25, 24 ), PoolIntArray( 27, 26, 28 ), PoolIntArray( 28, 26, 29 ), PoolIntArray( 31, 30, 32 ), PoolIntArray( 32, 30, 33 ), PoolIntArray( 38, 37, 34 ), PoolIntArray( 34, 37, 35 ), PoolIntArray( 35, 37, 36 ), PoolIntArray( 40, 39, 41 ), PoolIntArray( 41, 39, 42 ), PoolIntArray( 46, 45, 43 ), PoolIntArray( 43, 45, 44 ), PoolIntArray( 48, 47, 49 ), PoolIntArray( 49, 47, 50 ), PoolIntArray( 52, 51, 53 ), PoolIntArray( 53, 51, 54 ), PoolIntArray( 56, 55, 57 ), PoolIntArray( 57, 55, 58 ), PoolIntArray( 58, 55, 59 ), PoolIntArray( 59, 55, 60 ), PoolIntArray( 63, 62, 61 ), PoolIntArray( 66, 65, 64 ), PoolIntArray( 69, 68, 67 ), PoolIntArray( 71, 70, 72 ), PoolIntArray( 72, 70, 73 ), PoolIntArray( 75, 74, 76 ), PoolIntArray( 76, 74, 77 ), PoolIntArray( 79, 78, 80 ), PoolIntArray( 80, 78, 81 ), PoolIntArray( 81, 78, 82 ), PoolIntArray( 84, 83, 85 ), PoolIntArray( 85, 83, 86 ), PoolIntArray( 89, 88, 87 ), PoolIntArray( 92, 91, 90 ), PoolIntArray( 95, 94, 93 ) ]
+agent/max_climb = 0.1
 
 [sub_resource type="CubeMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.658824, 0.658824, 0.658824, 1 )
+
+[sub_resource type="CubeMesh" id=9]
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+
+[sub_resource type="BoxShape" id=10]
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_color = Color( 0.32549, 0.32549, 0.32549, 1 )
+
+[sub_resource type="PrismMesh" id=11]
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_color = Color( 0, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 0.0901961, 0.713726, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 0.45804, 1.35443, 0.809088 )
+
+[sub_resource type="CubeMesh" id=13]
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=14]
+
+[sub_resource type="CylinderMesh" id=15]
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_color = Color( 0.384314, 0.384314, 0.384314, 1 )
 
 [sub_resource type="BoxShape" id=4]
 
@@ -51,6 +87,89 @@ navmesh = SubResource( 8 )
 transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
+
+[node name="DjPult" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 2.85698, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34507, -14.6163 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/DjPult"]
+mesh = SubResource( 9 )
+material/0 = SubResource( 19 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/DjPult"]
+shape = SubResource( 10 )
+
+[node name="DjPult2" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 2.85698, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.137668, -16.5182 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/DjPult2"]
+mesh = SubResource( 9 )
+material/0 = SubResource( 20 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/DjPult2"]
+shape = SubResource( 10 )
+
+[node name="DJ" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 2.85698, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337872, -16.6238 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/DJ"]
+transform = Transform( 0.4, 0, 0, 0, 1.25, 0, 0, 0, 0.75, 0, 1.85763, 0 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 18 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="OmniLight" type="OmniLight" parent="Navigation/NavigationMeshInstance/DJ/MeshInstance"]
+transform = Transform( 0.87505, 0, 0, 0, 0.8, 0, 0, 0, 1.33333, 0, 0, 0 )
+light_color = Color( 0.0901961, 0.713726, 0, 1 )
+light_energy = 2.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/DJ"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74775, 0 )
+shape = SubResource( 12 )
+
+[node name="Speaker" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 0.902976, 0, 0.429692, 0, 1.80221, 0, -0.429692, 0, 0.902976, -14.8383, 1.79317, -13.3454 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker"]
+mesh = SubResource( 13 )
+material/0 = SubResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Speaker"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker"]
+transform = Transform( 0.5, 0, -4.44089e-16, 0, -2.18557e-08, -0.278856, 0, 0.5, -1.21892e-08, 0.0356488, 0.467794, 0.609734 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 17 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker"]
+transform = Transform( 0.644539, 0, 4.44089e-16, 0, -2.81737e-08, -0.359467, 0, 0.644539, -1.57128e-08, 0.0356493, -0.36097, 0.496025 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 17 )
+
+[node name="Speaker2" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 0.902976, 0, -0.429692, 0, 1.80221, 0, 0.429692, 0, 0.902976, 14.838, 1.793, -13.345 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker2"]
+mesh = SubResource( 13 )
+material/0 = SubResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Speaker2"]
+shape = SubResource( 14 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker2"]
+transform = Transform( 0.5, 0, -4.44089e-16, 0, -2.18557e-08, -0.278856, 0, 0.5, -1.21892e-08, 0.0356488, 0.467794, 0.609734 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 17 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker2"]
+transform = Transform( 0.644539, 0, 4.44089e-16, 0, -2.81737e-08, -0.359467, 0, 0.644539, -1.57128e-08, 0.0356493, -0.36097, 0.496025 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 17 )
 
 [node name="WallTop" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -70 )

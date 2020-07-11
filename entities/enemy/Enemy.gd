@@ -14,8 +14,8 @@ var path := []
 var pathIndex = 0
 var isPanicing := false
 
-#func _ready() -> void:
-#	$MeshInstance2.set_as_toplevel(true)
+func _ready() -> void:
+	$MeshInstance2.set_as_toplevel(true)
 
 var waiting := false
 func _physics_process(delta: float) -> void:
@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 			waiting = false
 		var randomPositionX := randi() % int(floorMeshInstanceSize.x) - 20
 		var randomPositionZ := randi() % int(floorMeshInstanceSize.y) - 20
-#		$MeshInstance2.transform.origin = Vector3(randomPositionX, global_transform.origin.y, randomPositionZ)
+		$MeshInstance2.transform.origin = Vector3(randomPositionX, global_transform.origin.y, randomPositionZ)
 		path = navigation.get_simple_path(global_transform.origin, Vector3(randomPositionX, global_transform.origin.y, randomPositionZ))
 		pathIndex = 0
 
