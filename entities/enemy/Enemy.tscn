@@ -42,6 +42,7 @@ light_color = Color( 0.85098, 0, 1, 1 )
 light_energy = 2.0
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
 
