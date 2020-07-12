@@ -17,6 +17,11 @@ var currentStage: int = Stage.RHYTHMIC
 var rhythmicScore: int = 0
 var survivalScore: int = 0
 var shootScore: int = 0
+
+var rhythmicHighScore: int = 0
+var survivalHighScore: int = 0
+var shootHighScore: int = 0
+
 var deathReason := ""
 
 func _ready() -> void:
@@ -33,7 +38,7 @@ func _process(delta: float) -> void:
 		time += delta
 		if time >= 1:
 			time -= 1
-			survivalScore += 1
+			survivalScore += 10
 
 func changeStage(newStage: int) -> void:
 	currentStage = newStage
@@ -45,6 +50,7 @@ func musicFinished() -> void:
 	changeStage(currentStage + 1)
 
 func die() -> void:
+	_setHighScore()
 	get_tree().change_scene("res://ui/GameOver.tscn")
 	changeStage(Stage.GAME_OVER)
 
@@ -57,3 +63,12 @@ func reset() -> void:
 	time = 0
 	get_tree().change_scene("res://scene/Disco.tscn")
 	_startGame()
+
+
+func _setHighScore() -> void:
+	if rhythmicScore > rhythmicHighScore:
+		rhythmicHighScore = rhythmicScore
+	if survivalScore > survivalHighScore:
+		survivalHighScore = survivalScore
+	if shootScore > shootHighScore:
+		shootHighScore = shootScore

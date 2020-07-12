@@ -52,15 +52,21 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_Area_body_entered(body: Node) -> void:
-	if !body.is_in_group("player"): return
+	if !body.is_in_group("player") && !body.is_in_group("bullet"): return
 	var currentGameStage = GameManager.currentStage
 	match(currentGameStage):
 		GameManager.Stage.RHYTHMIC:
 			GameManager.rhythmicScore -= 10
 			if GameManager.rhythmicScore < 0:
 				GameManager.rhythmicScore = 0
+		GameManager.Stage.SURVIVAL:
+			if body.is_in_group("player"):
+				GameManager.survivalScore -= 5
+				if GameManager.survivalScore < 0:
+					GameManager.survivalScore = 0
 		GameManager.Stage.SHOOT:
-			GameManager.shootScore += 2
+			if body.is_in_group("bullet"):
+				GameManager.shootScore += 2
 
 
 func damage(value: int) -> void:

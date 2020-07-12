@@ -34,22 +34,22 @@ __meta__ = {
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
 margin_right = 1004.0
-margin_bottom = 157.0
+margin_bottom = 113.0
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 161.0
+margin_top = 117.0
 margin_right = 1004.0
-margin_bottom = 194.0
+margin_bottom = 150.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "You Died!"
 align = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 198.0
+margin_top = 154.0
 margin_right = 1004.0
-margin_bottom = 225.0
+margin_bottom = 181.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -68,9 +68,9 @@ text = "Lamp"
 align = 1
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 229.0
+margin_top = 185.0
 margin_right = 1004.0
-margin_bottom = 282.0
+margin_bottom = 238.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -89,9 +89,9 @@ text = "Score:"
 align = 1
 
 [node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 286.0
+margin_top = 242.0
 margin_right = 1004.0
-margin_bottom = 313.0
+margin_bottom = 269.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -109,8 +109,50 @@ custom_fonts/font = ExtResource( 1 )
 text = "Score:"
 align = 1
 
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 273.0
+margin_right = 1004.0
+margin_bottom = 326.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_constants/margin_top = 20
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer6"]
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "HighScore:"
+align = 1
+
+[node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 330.0
+margin_right = 1004.0
+margin_bottom = 357.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_constants/margin_top = 10
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HighScore" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer7"]
+margin_top = 10.0
+margin_right = 1004.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Score:"
+align = 1
+
 [node name="Control2" type="Control" parent="MarginContainer/VBoxContainer"]
-margin_top = 317.0
+margin_top = 361.0
 margin_right = 1004.0
 margin_bottom = 474.0
 size_flags_vertical = 3

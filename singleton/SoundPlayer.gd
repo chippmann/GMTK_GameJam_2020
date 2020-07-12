@@ -46,6 +46,7 @@ func _process(_delta: float) -> void:
 
 func changeToStage(stage: int) -> void:
 	if !audioStreamPlayer: return
+	if stage > intros.size() - 1: return
 	audioStreamPlayer.stop()
 	if intros[stage]:
 		audioStreamPlayer.stream = intros[stage]

@@ -11,7 +11,6 @@ var health := 100
 var healthRegenInterval := 1
 var time: float = 0
 func _process(delta: float) -> void:
-	print(health)
 	time += delta
 	if time >= healthRegenInterval:
 		time -= healthRegenInterval

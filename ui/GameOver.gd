@@ -7,10 +7,11 @@ func _ready() -> void:
 Survival: %s
 Out of Control: %s
 """ % [GameManager.rhythmicScore, GameManager.survivalScore, GameManager.shootScore]
+	$MarginContainer/VBoxContainer/MarginContainer7/HighScore.text = """Rythmic: %s
+Survival: %s
+Out of Control: %s
+""" % [GameManager.rhythmicHighScore, GameManager.survivalHighScore, GameManager.shootHighScore]
 
-
-func _on_Button_pressed() -> void:
-	pass # Replace with function body.
 
 
 func _on_RetryButton_pressed() -> void:
