@@ -40,8 +40,8 @@ material/0 = ExtResource( 1 )
 transform = Transform( 1.80303, 0, 0, 0, 0.118624, -1.99648, 0, 1.7907, 0.106397, 0, -2.768, 0 )
 light_color = Color( 0.501961, 0.0666667, 0.560784, 1 )
 light_energy = 8.0
-spot_range = 16.8654
-spot_angle = 10.5911
+spot_range = 3.39496
+spot_angle = 22.1703
 
 [node name="MeshInstance3" type="MeshInstance" parent="."]
 transform = Transform( 0.644539, 0, 4.44089e-16, 0, -2.81737e-08, -0.359467, 0, 0.644539, -1.57128e-08, 0.0356493, -0.36097, 0.496025 )
@@ -57,5 +57,5 @@ material/0 = ExtResource( 1 )
 transform = Transform( 1.36063, 0, 0, 0, 0.0920222, -1.54876, 0, 1.35132, 0.0802909, 0, -1.85217, -0.0474786 )
 light_color = Color( 0.501961, 0.0666667, 0.560784, 1 )
 light_energy = 8.0
-spot_range = 16.6551
+spot_range = 10.6251
 spot_angle = 26.1506
