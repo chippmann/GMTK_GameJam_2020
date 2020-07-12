@@ -25,7 +25,7 @@ anchor_bottom = 1.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/margin_bottom = 50
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -34,29 +34,29 @@ __meta__ = {
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 1014.0
-margin_bottom = 590.0
+margin_bottom = 550.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
 margin_right = 1004.0
-margin_bottom = 113.0
+margin_bottom = 93.0
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 117.0
+margin_top = 97.0
 margin_right = 1004.0
-margin_bottom = 150.0
+margin_bottom = 130.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "You Died!"
 align = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 154.0
+margin_top = 134.0
 margin_right = 1004.0
-margin_bottom = 181.0
+margin_bottom = 161.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -75,9 +75,9 @@ text = "Lamp"
 align = 1
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 185.0
+margin_top = 165.0
 margin_right = 1004.0
-margin_bottom = 238.0
+margin_bottom = 218.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -96,9 +96,9 @@ text = "Score:"
 align = 1
 
 [node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 242.0
+margin_top = 222.0
 margin_right = 1004.0
-margin_bottom = 269.0
+margin_bottom = 249.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -117,9 +117,9 @@ text = "Score:"
 align = 1
 
 [node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 273.0
+margin_top = 253.0
 margin_right = 1004.0
-margin_bottom = 326.0
+margin_bottom = 306.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -138,9 +138,9 @@ text = "HighScore:"
 align = 1
 
 [node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 330.0
+margin_top = 310.0
 margin_right = 1004.0
-margin_bottom = 357.0
+margin_bottom = 337.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -159,16 +159,16 @@ text = "Score:"
 align = 1
 
 [node name="Control2" type="Control" parent="MarginContainer/VBoxContainer"]
-margin_top = 361.0
+margin_top = 341.0
 margin_right = 1004.0
-margin_bottom = 474.0
+margin_bottom = 434.0
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 margin_left = 427.0
-margin_top = 478.0
+margin_top = 438.0
 margin_right = 577.0
-margin_bottom = 527.0
+margin_bottom = 487.0
 rect_min_size = Vector2( 150, 32 )
 focus_mode = 2
 size_flags_horizontal = 4
@@ -190,9 +190,9 @@ flat = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 margin_left = 427.0
-margin_top = 531.0
+margin_top = 491.0
 margin_right = 577.0
-margin_bottom = 580.0
+margin_bottom = 540.0
 rect_min_size = Vector2( 150, 32 )
 focus_mode = 2
 size_flags_horizontal = 4
