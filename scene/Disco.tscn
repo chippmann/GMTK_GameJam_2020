@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://material/WallMaterial.tres" type="Material" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scene/SoundPlates.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/enemy/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/FallingLight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scene/Speaker.tscn" type="PackedScene" id=8]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -46,18 +47,6 @@ emission_on_uv2 = false
 
 [sub_resource type="BoxShape" id=12]
 extents = Vector3( 0.45804, 1.35443, 0.809088 )
-
-[sub_resource type="CubeMesh" id=13]
-
-[sub_resource type="SpatialMaterial" id=14]
-albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="BoxShape" id=15]
-
-[sub_resource type="CylinderMesh" id=16]
-
-[sub_resource type="SpatialMaterial" id=17]
-albedo_color = Color( 0.384314, 0.384314, 0.384314, 1 )
 
 [sub_resource type="BoxShape" id=18]
 
@@ -140,45 +129,11 @@ light_energy = 2.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74775, 0 )
 shape = SubResource( 12 )
 
-[node name="Speaker" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
-transform = Transform( 0.902976, 0, 0.429692, 0, 1.80221, 0, -0.429692, 0, 0.902976, -14.8383, 1.79317, -13.3454 )
+[node name="Speaker" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 8 )]
+transform = Transform( 0.902976, 0, 0.429692, 0, 1.80221, 0, -0.429692, 0, 0.902976, -14.838, 1.793, -13.345 )
 
-[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker"]
-mesh = SubResource( 13 )
-material/0 = SubResource( 14 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Speaker"]
-shape = SubResource( 15 )
-
-[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker"]
-transform = Transform( 0.5, 0, -4.44089e-16, 0, -2.18557e-08, -0.278856, 0, 0.5, -1.21892e-08, 0.0356488, 0.467794, 0.609734 )
-mesh = SubResource( 16 )
-material/0 = SubResource( 17 )
-
-[node name="MeshInstance3" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker"]
-transform = Transform( 0.644539, 0, 4.44089e-16, 0, -2.81737e-08, -0.359467, 0, 0.644539, -1.57128e-08, 0.0356493, -0.36097, 0.496025 )
-mesh = SubResource( 16 )
-material/0 = SubResource( 17 )
-
-[node name="Speaker2" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+[node name="Speaker2" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 8 )]
 transform = Transform( 0.902976, 0, -0.429692, 0, 1.80221, 0, 0.429692, 0, 0.902976, 14.838, 1.793, -13.345 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker2"]
-mesh = SubResource( 13 )
-material/0 = SubResource( 14 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Speaker2"]
-shape = SubResource( 15 )
-
-[node name="MeshInstance2" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker2"]
-transform = Transform( 0.5, 0, -4.44089e-16, 0, -2.18557e-08, -0.278856, 0, 0.5, -1.21892e-08, 0.0356488, 0.467794, 0.609734 )
-mesh = SubResource( 16 )
-material/0 = SubResource( 17 )
-
-[node name="MeshInstance3" type="MeshInstance" parent="Navigation/NavigationMeshInstance/Speaker2"]
-transform = Transform( 0.644539, 0, 4.44089e-16, 0, -2.81737e-08, -0.359467, 0, 0.644539, -1.57128e-08, 0.0356493, -0.36097, 0.496025 )
-mesh = SubResource( 16 )
-material/0 = SubResource( 17 )
 
 [node name="WallTop" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -70 )
@@ -299,6 +254,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48021, 0 )
 cameraNodePath = NodePath("../Camera")
 
 [node name="Lights" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 21 )

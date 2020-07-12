@@ -39,7 +39,7 @@ func _fallingLights(delta: float) -> void:
 		fallingLightTime -= fallingLightsTimeInterval
 		var randomPositionX := randi() % int(floorMeshInstanceSize.x) - 20
 		var randomPositionZ := randi() % int(floorMeshInstanceSize.y) - 20
-		var spawnPosition := Vector3(randomPositionX, global_transform.origin.y + 20, randomPositionZ)
+		var spawnPosition := Vector3(randomPositionX, global_transform.origin.y + 40, randomPositionZ)
 		var fallingLight: FallingLight = fallingLightPackedScene.instance()
 		fallingLight.transform.origin = spawnPosition
 		get_parent().add_child(fallingLight)
@@ -74,7 +74,7 @@ func _getLightEnergy(light: int) -> float:
 		lightEnergy +=  SoundPlayer.spectrumEnergy[i]
 	lightEnergy /= 4
 	lightEnergy *= 2
-	return lightEnergy + 0.5
+	return lightEnergy + 1
 
 func _getLightColor() -> Color:
 	return Color(randf(), randf(), randf())

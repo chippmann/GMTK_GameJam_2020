@@ -104,6 +104,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scene/SoundPlates.gd"
 }, {
+"base": "StaticBody",
+"class": "Speaker",
+"language": "GDScript",
+"path": "res://scene/Speaker.gd"
+}, {
 "base": "Node2D",
 "class": "State2D",
 "language": "GDScript",
@@ -154,6 +159,7 @@ _global_script_class_icons={
 "PlayerWeaponGimbal": "",
 "Serializer": "",
 "SoundPlates": "",
+"Speaker": "",
 "State2D": "",
 "State3D": "",
 "StateMachine2D": "",

@@ -12,26 +12,26 @@ fallingLightPackedScene = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 10, 0, 10 )
 light_color = Color( 0.513726, 0, 0.721569, 1 )
 light_energy = 2.0
-spot_range = 100.0
-spot_angle = 31.8
+spot_range = 30.0
+spot_angle = 35.0
 
 [node name="SpotLight2" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 10, 0, -10 )
 light_color = Color( 0.513726, 0, 0.721569, 1 )
 light_energy = 2.0
-spot_range = 100.0
-spot_angle = 31.8
+spot_range = 30.0
+spot_angle = 35.0
 
 [node name="SpotLight3" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, -10, 0, 10 )
 light_color = Color( 0.513726, 0, 0.721569, 1 )
 light_energy = 2.0
-spot_range = 100.0
-spot_angle = 31.8
+spot_range = 30.0
+spot_angle = 35.0
 
 [node name="SpotLight4" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, -10, 0, -10 )
 light_color = Color( 0.513726, 0, 0.721569, 1 )
 light_energy = 2.0
-spot_range = 100.0
-spot_angle = 31.8
+spot_range = 30.0
+spot_angle = 35.0
