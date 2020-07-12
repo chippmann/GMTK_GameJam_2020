@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://entities/enemy/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://entities/enemy/EnemyWeaponGimbal.gd" type="Script" id=2]
+[ext_resource path="res://entities/enemy/EnemyWeapon.gd" type="Script" id=3]
+[ext_resource path="res://entities/common/Bullet.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -60,8 +62,12 @@ script = ExtResource( 2 )
 
 [node name="Weapon" type="MeshInstance" parent="WeaponGimbal"]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.6, 1, 0, -0.6 )
+visible = false
 mesh = SubResource( 7 )
 material/0 = null
+script = ExtResource( 3 )
+bulletPackedScene = ExtResource( 4 )
+lightNodePath = NodePath("../../MeshInstance/OmniLight")
 
 [node name="BulletSpawnPoint" type="Spatial" parent="WeaponGimbal/Weapon"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.00669 )

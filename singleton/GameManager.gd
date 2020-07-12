@@ -8,7 +8,8 @@ const timeInStageTwo := 20 #120
 enum Stage {
 	RHYTHMIC,
 	SURVIVAL,
-	SHOOT
+	SHOOT,
+	GAME_OVER
 }
 
 var currentStage: int = Stage.RHYTHMIC
@@ -19,13 +20,14 @@ var shootScore: int = 0
 var deathReason := ""
 
 func _ready() -> void:
-	yield(get_tree().create_timer(timeInStageOne), "timeout")
-	_changeStage(Stage.SURVIVAL)
-	yield(get_tree().create_timer(timeInStageTwo), "timeout")
-	_changeStage(Stage.SHOOT)
+	_startGame()
+
+
+func _startGame() -> void:
+	changeStage(Stage.RHYTHMIC)
+	emit_signal("stageChanged", Stage.RHYTHMIC)
 
 var time: float = 0
-
 func _process(delta: float) -> void:
 	if currentStage == Stage.SURVIVAL:
 		time += delta
@@ -33,15 +35,20 @@ func _process(delta: float) -> void:
 			time -= 1
 			survivalScore += 1
 
-func _changeStage(newStage: int) -> void:
+func changeStage(newStage: int) -> void:
 	currentStage = newStage
 	SoundPlayer.changeToStage(newStage)
 	emit_signal("stageChanged", newStage)
 
+func musicFinished() -> void:
+	if currentStage == Stage.SHOOT: return
+	changeStage(currentStage + 1)
 
 func die() -> void:
 	print("died!")
+	return
 	get_tree().change_scene("res://ui/GameOver.tscn")
+	changeStage(Stage.GAME_OVER)
 
 func reset() -> void:
 	currentStage = Stage.RHYTHMIC
@@ -51,3 +58,4 @@ func reset() -> void:
 	deathReason = ""
 	time = 0
 	get_tree().change_scene("res://scene/Disco.tscn")
+	_startGame()

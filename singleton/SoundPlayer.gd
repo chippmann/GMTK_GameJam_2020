@@ -8,6 +8,7 @@ export(NodePath) var audioStreamPlayerNodePath
 onready var audioStreamPlayer: AudioStreamPlayer = get_node(audioStreamPlayerNodePath)
 
 export(Array, AudioStream) var audioStreams: Array
+export(Array, AudioStream) var intros: Array
 
 onready var busIndex := AudioServer.get_bus_index(audioStreamPlayer.bus)
 onready var spectrumAnalyzer: AudioEffectSpectrumAnalyzerInstance = AudioServer.get_bus_effect_instance(busIndex, 0)
@@ -17,6 +18,7 @@ var wholeSpectrumEnergy: float = 0
 var spectrumEnergy: Array = Array()
 
 func _ready() -> void:
+	audioStreamPlayer.connect("finished", self, "_onAudioPlayerFinished")
 	spectrumEnergy.resize(_spectrumToMeasureCount)
 	audioStreamPlayer.stream = audioStreams[0]
 	audioStreamPlayer.play()
@@ -35,6 +37,19 @@ func _process(_delta: float) -> void:
 
 
 func changeToStage(stage: int) -> void:
+	if !audioStreamPlayer: return
 	audioStreamPlayer.stop()
+	if intros[stage]:
+		audioStreamPlayer.stream = intros[stage]
+		audioStreamPlayer.play()
+		yield(audioStreamPlayer, "finished")
+	
 	audioStreamPlayer.stream = audioStreams[stage]
 	audioStreamPlayer.play()
+
+
+func _onAudioPlayerFinished() -> void:
+	if GameManager.currentStage == GameManager.Stage.SHOOT:
+		return
+	
+	GameManager.musicFinished()

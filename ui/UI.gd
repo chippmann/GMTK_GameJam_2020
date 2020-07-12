@@ -33,17 +33,17 @@ func _onStageChanged(newStage: int) -> void:
 
 
 func _onStageRhythmicEnter() -> void:
-	tutorialText.text = "Time to Dance!\nShow off your dancing skills by\ndancing to the fields using\nW, A, S, D or your JoyStick.\nBe super fast with Shift"
+	tutorialText.text = "Time to Dance!\nShow off your dancing skills by\ndancing to the fields using\nW, A, S, D or your JoyStick.\nBe super fast with Shift\nDon't be a duche and run into people though..."
 	_showAndHideTutorialContainer()
 
 
 func _onStageSurvivalEnter() -> void:
-	tutorialText.text = "What's that?\nOh now the sound is too intense!\nThe disco is collapsing.\nPay attention to your sourroundings!"
+	tutorialText.text = "What's that?\nOh no... the sound is too intense!\nThe disco is collapsing.\nPay attention to your sourroundings!"
 	_showAndHideTutorialContainer()
 
 
 func _onStageShootEnter() -> void:
-	tutorialText.text = "Oh god... Now everything is\nOut of Control!\nQuick, use this gun (which is\ntotally NOT just teleported in your hands)\nand survive this hell..."
+	tutorialText.text = "Oh god... Now everything is\nOut of Control!\nQuick, use this gun (which is\ntotally NOT just teleported in your hands)\nand survive this madness..."
 	_showAndHideTutorialContainer()
 
 

@@ -62,6 +62,7 @@ script = ExtResource( 5 )
 
 [node name="Weapon" type="MeshInstance" parent="WeaponGimbal"]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.8, 1, 0, -0.8 )
+visible = false
 mesh = SubResource( 4 )
 material/0 = null
 script = ExtResource( 7 )
