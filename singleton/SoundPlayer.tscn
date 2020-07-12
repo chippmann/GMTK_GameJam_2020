@@ -12,6 +12,7 @@ script = ExtResource( 1 )
 audioStreamPlayerNodePath = NodePath("AudioStreamPlayer")
 audioStreams = [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 6 ) ]
 intros = [ null, null, ExtResource( 4 ), null ]
+mainMenuMusic = ExtResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 bus = "Music"

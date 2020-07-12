@@ -9,6 +9,7 @@ onready var audioStreamPlayer: AudioStreamPlayer = get_node(audioStreamPlayerNod
 
 export(Array, AudioStream) var audioStreams: Array
 export(Array, AudioStream) var intros: Array
+export(AudioStream) var mainMenuMusic: AudioStream
 
 onready var busIndex := AudioServer.get_bus_index(audioStreamPlayer.bus)
 onready var spectrumAnalyzer: AudioEffectSpectrumAnalyzerInstance = AudioServer.get_bus_effect_instance(busIndex, 0)
@@ -43,6 +44,9 @@ func _process(_delta: float) -> void:
 		spectrumEnergy.insert(i, energy)
 		peviousHz = hz
 
+func playMainMenu() -> void:
+	audioStreamPlayer.stream = mainMenuMusic
+	audioStreamPlayer.play()
 
 func changeToStage(stage: int) -> void:
 	if !audioStreamPlayer: return

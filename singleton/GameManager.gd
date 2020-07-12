@@ -5,6 +5,8 @@ signal stageChanged
 const timeInStageOne := 20 #60
 const timeInStageTwo := 20 #120
 
+export(PackedScene) var mainMenuPackedScene: PackedScene
+
 enum Stage {
 	RHYTHMIC,
 	SURVIVAL,
@@ -23,17 +25,33 @@ var survivalHighScore: int = 0
 var shootHighScore: int = 0
 
 var deathReason := ""
+var isInMainMenu := false
 
 func _ready() -> void:
-	_startGame()
+	yield(SoundPlayer, "ready")
+	SoundPlayer.playMainMenu()
 
 
-func _startGame() -> void:
+func startGame() -> void:
 	changeStage(Stage.RHYTHMIC)
 	emit_signal("stageChanged", Stage.RHYTHMIC)
 
+func stopGame() -> void:
+	if !isInMainMenu:
+		currentStage = Stage.RHYTHMIC
+		rhythmicScore = 0
+		survivalScore = 0
+		shootScore = 0
+		deathReason = ""
+		time = 0
+		get_tree().change_scene_to(mainMenuPackedScene)
+		SoundPlayer.playMainMenu()
+
 var time: float = 0
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("quit"):
+		stopGame()
+		return
 	if currentStage == Stage.SURVIVAL:
 		time += delta
 		if time >= 1:
@@ -62,7 +80,7 @@ func reset() -> void:
 	deathReason = ""
 	time = 0
 	get_tree().change_scene("res://scene/Disco.tscn")
-	_startGame()
+	startGame()
 
 
 func _setHighScore() -> void:

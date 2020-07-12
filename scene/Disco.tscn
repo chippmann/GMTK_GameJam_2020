@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://material/WallMaterial.tres" type="Material" id=1]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://scene/Lights.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/SoundPlates.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/enemy/Enemy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scene/FallingLight.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scene/Speakers.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scene/Floor.tscn" type="PackedScene" id=9]
 
@@ -292,9 +291,6 @@ navigationNodePath = NodePath("../../Navigation")
 [node name="Enemy7" parent="Enemies" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5067, 1.15349, 15.5905 )
 navigationNodePath = NodePath("../../Navigation")
-
-[node name="FallingLight" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.9017, 0 )
 
 [node name="SpawnPoints" type="Spatial" parent="."]
 
