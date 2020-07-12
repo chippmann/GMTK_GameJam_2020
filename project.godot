@@ -182,7 +182,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GMTK_GameJam_2020"
+config/name="Panic at the Disco"
 run/main_scene="res://ui/MainMenu.tscn"
 boot_splash/image="res://asset/images/splashScreen.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
