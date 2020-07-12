@@ -45,8 +45,6 @@ func musicFinished() -> void:
 	changeStage(currentStage + 1)
 
 func die() -> void:
-	print("died!")
-	return
 	get_tree().change_scene("res://ui/GameOver.tscn")
 	changeStage(Stage.GAME_OVER)
 

@@ -17,6 +17,7 @@ const _spectrumToMeasureCount := 16
 var wholeSpectrumEnergy: float = 0
 var spectrumEnergy: Array = [0]
 var speakerSpectrumEnergy: float = 0
+var speakerOverdriveSpectrumEnergy: float = 0
 
 func _ready() -> void:
 	audioStreamPlayer.connect("finished", self, "_onAudioPlayerFinished")
@@ -30,6 +31,9 @@ func _process(_delta: float) -> void:
 	
 	var speakerSpectrumMagnitude := spectrumAnalyzer.get_magnitude_for_frequency_range(0, 65).length()
 	speakerSpectrumEnergy = clamp((MIN_DB + linear2db(speakerSpectrumMagnitude)) / MIN_DB, 0, 1)
+	
+	var speakerOverdriveSpectrumMagnitude := spectrumAnalyzer.get_magnitude_for_frequency_range(0, 35).length()
+	speakerOverdriveSpectrumEnergy = clamp((MIN_DB + linear2db(speakerOverdriveSpectrumMagnitude)) / MIN_DB, 0, 1)
 	
 	var peviousHz: float = 0
 	for i in range(1, _spectrumToMeasureCount + 1):

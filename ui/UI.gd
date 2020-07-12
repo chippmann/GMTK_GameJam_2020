@@ -14,6 +14,10 @@ func _ready() -> void:
 	_onStageChanged(0)
 
 func _process(delta: float) -> void:
+	$MarginContainer/Health.visible = GameManager.currentStage >= GameManager.Stage.SURVIVAL
+	var player = get_tree().get_nodes_in_group("player")[0]
+	if player:
+		$MarginContainer/Health.text = "Health: %s" % player.health
 	match(GameManager.currentStage):
 		GameManager.Stage.RHYTHMIC:
 			scoreLabel.text = "Score: %s" % GameManager.rhythmicScore
@@ -33,7 +37,7 @@ func _onStageChanged(newStage: int) -> void:
 
 
 func _onStageRhythmicEnter() -> void:
-	tutorialText.text = "Time to Dance!\nShow off your dancing skills by\ndancing to the fields using\nW, A, S, D or your JoyStick.\nBe super fast with Shift\nDon't be a duche and run into people though..."
+	tutorialText.text = "Time to Dance!\nShow off your dancing skills by\ndancing to the fields using\nW, A, S, D.\nBe super fast with Shift\nDon't be a duche and run into people though..."
 	_showAndHideTutorialContainer()
 
 

@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 func _on_Area_body_entered(body: Node) -> void:
 	if body == self: return
 	if body.is_in_group("player"):
-		(body as Player).damage(25)
+		(body as Player).damage(25, "Life Advice: Try not to get shot too often...")
 	
 	if body.is_in_group("enemy"):
 		(body as Enemy).damage(25)

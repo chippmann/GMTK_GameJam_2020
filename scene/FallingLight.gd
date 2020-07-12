@@ -21,6 +21,5 @@ func _ready() -> void:
 func _on_Area_body_entered(body: Node) -> void:
 	if body == self: return
 	if body.is_in_group("player"):
-		GameManager.deathReason = "Try not to get hit by falling lamps..."
-		GameManager.die()
+		body.damage(25, "Try not to get hit by falling lamps...")
 	queue_free()

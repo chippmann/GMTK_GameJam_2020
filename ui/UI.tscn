@@ -107,3 +107,13 @@ sadfasd   fasafd
 dsafsadf"
 
 [node name="Tween" type="Tween" parent="MarginContainer/HBoxContainer/TutorialUiContainer"]
+
+[node name="Health" type="Label" parent="MarginContainer"]
+margin_left = 10.0
+margin_top = 565.0
+margin_right = 1014.0
+margin_bottom = 590.0
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 2 )
+text = "Health: 100"
+align = 1
