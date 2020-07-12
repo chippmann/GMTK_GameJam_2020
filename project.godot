@@ -178,12 +178,18 @@ _global_script_class_icons={
 
 config/name="GMTK_GameJam_2020"
 run/main_scene="res://scene/Disco.tscn"
+boot_splash/image="res://asset/images/splashScreen.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
 
 GameManager="*res://singleton/GameManager.tscn"
 SoundPlayer="*res://singleton/SoundPlayer.tscn"
+
+[display]
+
+window/size/fullscreen=true
 
 [editor_plugins]
 
